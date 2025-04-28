@@ -1,26 +1,26 @@
-import re
-import sys
-from os.path import dirname, abspath, exists, isdir
-from os import remove, mkdir, walk
-import time
-from collections import defaultdict
-
 import codecs
 import csv
-import pandas as pd
-import numpy as np
-from rich import progress
-from rich.table import Table
-from rich.console import Console
-from fastparquet import ParquetFile, write
-import pyarrow.parquet as pq
-from opencc import OpenCC
-import ujson
-from matplotlib import pyplot as plt
+import re
+import sys
+import time
+from collections import defaultdict
+from os import mkdir, remove, walk
+from os.path import abspath, dirname, exists, isdir
 
+import numpy as np
+import pandas as pd
+import pyarrow.parquet as pq
+import ujson
+from fastparquet import ParquetFile, write
 from logger import Logger
+from matplotlib import pyplot as plt
+from opencc import OpenCC
+from rich import progress
+from rich.console import Console
+from rich.table import Table
+
 from config import PROJECT_ROOT
-from utils.functions import get_path_of_suffix_files, DropDatasetDuplicate
+from utils.functions import DropDatasetDuplicate, get_path_of_suffix_files
 
 sys.path.extend([".", ".."])
 

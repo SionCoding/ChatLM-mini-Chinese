@@ -1,8 +1,9 @@
 import torch
-from torch import Tensor, LongTensor
-from transformers import T5ForConditionalGeneration, T5Config
-from transformers import TextIteratorStreamer
+from torch import LongTensor, Tensor
+from transformers import (T5Config, T5ForConditionalGeneration,
+                          TextIteratorStreamer)
 from transformers.generation.configuration_utils import GenerationConfig
+
 
 class TextToTextModel(T5ForConditionalGeneration):
     def __init__(self, config: T5Config) -> None:

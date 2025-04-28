@@ -1,23 +1,22 @@
 # coding=utf-8
+import os
 import time
-import os 
-import pandas as pd 
 from dataclasses import dataclass
-import torch
 from typing import Dict
 
-from tqdm import tqdm
 import numpy as np
-from transformers import PreTrainedTokenizerFast, Seq2SeqTrainer, DataCollatorForSeq2Seq, Seq2SeqTrainingArguments
-
-from transformers.generation.configuration_utils import GenerationConfig
+import pandas as pd
+import torch
 from datasets import Dataset, load_dataset
+from tqdm import tqdm
+from transformers import (DataCollatorForSeq2Seq, PreTrainedTokenizerFast,
+                          Seq2SeqTrainer, Seq2SeqTrainingArguments)
+from transformers.generation.configuration_utils import GenerationConfig
 
+from config import T5ModelConfig, TrainConfig
 from model.chat_model import TextToTextModel
 from model.dataset import MyDataset
-from config import TrainConfig, T5ModelConfig
-
-from utils.functions import json_to_dataclass, get_T5_config, MyTrainerCallback
+from utils.functions import MyTrainerCallback, get_T5_config, json_to_dataclass
 
 tqdm.pandas()
 

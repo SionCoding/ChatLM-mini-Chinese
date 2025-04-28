@@ -1,8 +1,9 @@
-import ujson
 import codecs
 import re
+
+import numpy as np
+import ujson
 from rich import progress
-import numpy as np 
 
 
 def process_all_50_schemas(raw_schemas_file: str='./data/all_50_schemas', save_schemas_file: str=None) -> list[str]:

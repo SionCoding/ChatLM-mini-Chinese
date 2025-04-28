@@ -2,13 +2,13 @@ from dataclasses import dataclass
 from typing import Union
 
 import uvicorn
-from fastapi import FastAPI, Depends, status
-from fastapi.security import OAuth2PasswordBearer
+from fastapi import Depends, FastAPI, status
 from fastapi.exceptions import HTTPException
+from fastapi.security import OAuth2PasswordBearer
 from pydantic import BaseModel
 
-from model.infer import ChatBot
 from config import InferConfig
+from model.infer import ChatBot
 
 CONFIG = InferConfig()
 chat_bot = ChatBot(infer_config=CONFIG)

@@ -1,13 +1,13 @@
-import platform
 import os
+import platform
 import time
 from threading import Thread
 
-from rich.text import Text
 from rich.live import Live
+from rich.text import Text
 
-from model.infer import ChatBot
 from config import InferConfig
+from model.infer import ChatBot
 
 infer_config = InferConfig()
 chat_bot = ChatBot(infer_config=infer_config)

@@ -1,10 +1,12 @@
 import logging
-from os.path import dirname, abspath
 import os
-import colorlog 
 import time
+from os.path import abspath, dirname
+
+import colorlog
 
 from config import PROJECT_ROOT
+
 
 # 自定义日志格式
 class Logger(object):

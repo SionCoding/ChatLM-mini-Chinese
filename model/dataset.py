@@ -1,20 +1,20 @@
 from typing import Union
 
-from torch.utils.data import Dataset
-from torch import LongTensor, cuda
-from transformers import PreTrainedTokenizerFast
-from fastparquet import ParquetFile
-from torch.utils.data import DataLoader
-from datasets import load_dataset
 import datasets
 import pyarrow.parquet as pq
+from datasets import load_dataset
+from fastparquet import ParquetFile
 from numpy import array, int64
 from numpy.random import shuffle
+from torch import LongTensor, cuda
+from torch.utils.data import DataLoader, Dataset
+from transformers import PreTrainedTokenizerFast
+
+from config import PROJECT_ROOT
 
 # import sys 
 # sys.path.extend(['.', '..'])
 
-from config import PROJECT_ROOT
 
 class MyDataset(Dataset):
 

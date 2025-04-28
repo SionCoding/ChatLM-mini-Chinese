@@ -1,15 +1,15 @@
 # coding=utf-8
-from typing import Dict, Optional
+import os
 import time
-import os 
+from typing import Dict, Optional
 
 import pandas as pd
 import torch
 from datasets import Dataset, load_dataset
+from peft import LoraConfig, PeftModel, TaskType
+from tokenizers import Tokenizer
 from transformers import PreTrainedTokenizerFast, TrainingArguments
 from trl import DPOTrainer
-from tokenizers import Tokenizer
-from peft import LoraConfig, TaskType, PeftModel
 
 from config import DpoConfig, T5ModelConfig
 from model.chat_model import TextToTextModel

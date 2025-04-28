@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from os.path import dirname, abspath
+from os.path import abspath, dirname
 
 # replace '\' on windows to '/'
 PROJECT_ROOT: str = '/'.join(abspath(dirname(__file__)).split('\\')) if '\\' in abspath(dirname(__file__)) else abspath(dirname(__file__))

@@ -1,15 +1,17 @@
 import os
+
 import pandas as pd
 import sentencepiece as spm
 import tokenizers
 from tokenizers import Tokenizer, decoders
 from tokenizers.models import BPE
+from tokenizers.normalizers import NFKC
+from tokenizers.pre_tokenizers import Digits, Metaspace, Punctuation
 from tokenizers.trainers import BpeTrainer
-from tokenizers.pre_tokenizers import Punctuation, Digits, Metaspace
-from tokenizers.normalizers import NFKC 
 from transformers import PreTrainedTokenizerFast
 
 from config import PROJECT_ROOT
+
 
 def check_dir_exits(dir: str) -> None:
     '''

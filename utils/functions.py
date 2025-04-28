@@ -1,22 +1,19 @@
-from collections import Counter
-from typing import Union
-from dataclasses import make_dataclass, field
-from transformers import T5Config
 import ctypes
 import os
 import platform
 import re
+from collections import Counter, defaultdict
+from dataclasses import field, make_dataclass
+from typing import Union
+
+import numpy as np
 import torch
-
+import ujson
 from datasketch import MinHash, MinHashLSH
-from collections import defaultdict
-from transformers.trainer_callback import TrainerControl, TrainerState
-from transformers import TrainingArguments, TrainerCallback
-
 # from nltk import ngrams
 from nltk.translate.bleu_score import sentence_bleu
-import numpy as np
-import ujson
+from transformers import T5Config, TrainerCallback, TrainingArguments
+from transformers.trainer_callback import TrainerControl, TrainerState
 
 from config import T5ModelConfig
 

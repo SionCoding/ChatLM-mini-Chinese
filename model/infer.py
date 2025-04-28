@@ -1,19 +1,18 @@
 import os
-from threading import Thread
 import platform
+from threading import Thread
 from typing import Union
+
 import torch
-
-from transformers import TextIteratorStreamer,PreTrainedTokenizerFast
-from safetensors.torch import load_model
-
 from accelerate import init_empty_weights, load_checkpoint_and_dispatch
+from safetensors.torch import load_model
+from transformers import PreTrainedTokenizerFast, TextIteratorStreamer
 
+from config import InferConfig, T5ModelConfig
 # import 自定义类和函数
 from model.chat_model import TextToTextModel
 from utils.functions import get_T5_config
 
-from config import InferConfig, T5ModelConfig
 
 class ChatBot:
     def __init__(self, infer_config: InferConfig) -> None:

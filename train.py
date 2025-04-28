@@ -1,10 +1,9 @@
 import fire
 
-from config import  TrainConfig, T5ModelConfig
+from config import T5ModelConfig, TrainConfig
 from model.trainer import ChatTrainer
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     train_config = TrainConfig()
     model_config = T5ModelConfig()
 
